@@ -826,8 +826,15 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  .brand-logo--nav { height: 1.9rem; }
-  .brand-logo--footer { height: 2.15rem; }
+  .site-nav { padding: 0.95rem 0; }
+  .site-nav .wrap { gap: 1rem; position: relative; }
+  .nav-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 6rem);
+  }
+  .brand-logo--nav { height: 1.75rem; }
+  .brand-logo--footer { height: 2rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
@@ -836,9 +843,115 @@ ul { list-style: none; }
     backdrop-filter: blur(20px);
     padding: 1.5rem var(--px); gap: 1rem;
   }
-  .menu-toggle { display: inline-flex; }
-  .hero { min-height: auto; padding: 10rem 0 4rem; }
-  .hero h1 { font-size: clamp(3.5rem, 16vw, 6rem); }
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+    flex: 0 0 auto;
+  }
+  .hero {
+    min-height: auto;
+    padding: 7.5rem 0 3.75rem;
+  }
+  .hero .eyebrow {
+    display: block;
+    max-width: 17rem;
+    font-size: 0.62rem;
+    line-height: 1.8;
+    letter-spacing: 0.14em;
+  }
+  .hero h1 {
+    font-size: clamp(3.1rem, 20vw, 4.9rem);
+    max-width: 5.5ch;
+    margin-bottom: 1.75rem;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(240,240,255,0.72);
+    max-width: none;
+    margin-bottom: 2rem;
+  }
+  .hero-geo-1 {
+    width: 82vw;
+    height: 82vw;
+    top: -8%;
+    right: -34%;
+  }
+  .hero-geo-4 {
+    top: 28%;
+    right: 3%;
+  }
+  .ticker-wrap {
+    margin: 0;
+    padding: 0.95rem 0;
+  }
+  .ticker {
+    gap: 1.75rem;
+    animation: none;
+    width: max-content;
+    padding-left: var(--px);
+  }
+  .ticker span {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+  }
+  .ticker span::after { margin-left: 1.75rem; }
+  .stats-bar { padding: 3rem 0; }
+  .stat-cell {
+    padding: 0 0 1.5rem !important;
+  }
+  .stat-cell::after { display: none !important; }
+  .stat-cell:not(:last-child) {
+    border-bottom: 1px solid rgba(240,240,255,0.08);
+    margin-bottom: 1.5rem;
+  }
+  .stat-value {
+    font-size: 1.45rem;
+    line-height: 1.05;
+    max-width: 11ch;
+  }
+  .pos-sec, .svc-sec, .ret-sec, .ai-sec, .fit-sec, .proc-sec, .faq-sec, .cta-sec {
+    padding: 4.5rem 0;
+  }
+  .pos-headline, .svc-intro h2, .ret-text h2,
+  .ai-intro h2, .fit-intro h2, .proc-intro h2,
+  .faq-intro h2, .cta-content h2 {
+    font-size: clamp(2.4rem, 13vw, 3.5rem);
+    line-height: 0.92;
+    max-width: 8ch;
+  }
+  .svc-intro, .ai-intro, .fit-intro, .proc-intro, .faq-intro {
+    margin-bottom: 3rem;
+  }
+  .svc-intro, .ai-intro { gap: 1.5rem; }
+  .svc-intro p, .ai-intro p, .fit-intro p, .ret-text p,
+  .cta-content p, .faq-answer {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    max-width: none;
+  }
+  .svc-featured {
+    margin: 0;
+    padding: 3.5rem 0;
+  }
+  .svc-featured-inner {
+    gap: 2rem;
+  }
+  .svc-featured-inner h3,
+  .svc-item h3,
+  .ai-card h3,
+  .ret-col h3,
+  .fit-item h3,
+  .proc-step h3 {
+    font-size: clamp(1.9rem, 9vw, 2.35rem);
+    line-height: 0.96;
+  }
+  .svc-item, .ai-card, .fit-item {
+    padding: 2rem 0;
+  }
+  .svc-price {
+    font-size: 0.9rem;
+  }
   .svc-grid, .ai-grid, .proc-list,
   .fit-grid, .ai-notes, .stats-grid {
     grid-template-columns: 1fr;
@@ -848,12 +961,33 @@ ul { list-style: none; }
   }
   .fit-item:nth-child(odd) { border-right: none; }
   .ticker-wrap, .svc-featured, .ret-sec, .proc-sec { clip-path: none; }
-  .ticker-wrap { margin: 0; }
+  .site-footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .footer-tag {
+    display: block;
+    max-width: 22rem;
+  }
   .cta-content h2 { font-size: clamp(2.5rem, 10vw, 4rem); }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 8rem 0 3rem; }
+  .nav-brand { max-width: calc(100% - 5.5rem); }
+  .brand-logo--nav { height: 1.55rem; }
+  .brand-logo--footer { height: 1.8rem; }
+  .hero { padding: 7rem 0 3rem; }
+  .hero .eyebrow { max-width: 14rem; }
+  .hero h1 {
+    font-size: clamp(2.9rem, 18vw, 4.3rem);
+  }
+  .pos-headline, .svc-intro h2, .ret-text h2,
+  .ai-intro h2, .fit-intro h2, .proc-intro h2,
+  .faq-intro h2, .cta-content h2 {
+    font-size: clamp(2.1rem, 12vw, 3rem);
+    max-width: 9ch;
+  }
   .hero-actions, .cta-actions { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
 }
@@ -866,7 +1000,7 @@ ul { list-style: none; }
   <div class="wrap">
     <a href="#top" class="nav-brand" aria-label="Starling Marketing home">
       <img
-        src="assets/starling-logo-horizontal-white-trimmed.png"
+        src="assets/starling-logo-horizontal-white-cropped.png"
         alt="Starling Marketing"
         class="brand-logo brand-logo--nav"
       >
@@ -1234,7 +1368,7 @@ ul { list-style: none; }
     <div style="display:flex;align-items:center;gap:2rem;">
       <span class="footer-brand">
         <img
-          src="assets/starling-logo-horizontal-white-trimmed.png"
+          src="assets/starling-logo-horizontal-white-cropped.png"
           alt="Starling Marketing"
           class="brand-logo brand-logo--footer"
         >

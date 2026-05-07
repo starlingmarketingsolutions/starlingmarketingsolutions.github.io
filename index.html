@@ -65,14 +65,14 @@ ul { list-style: none; }
   backdrop-filter: blur(20px);
 }
 .site-nav .wrap { display: flex; align-items: center; justify-content: space-between; }
-.nav-brand { display: flex; align-items: center; gap: 0.75rem; }
-.nav-mark {
-  width: 2.2rem; height: 2.2rem; border-radius: 8px;
-  background: linear-gradient(135deg, var(--teal), var(--purple) 60%, var(--magenta));
-  display: grid; place-items: center;
-  font-family: var(--font-display); font-size: 1.1rem; color: #fff;
+.nav-brand { display: flex; align-items: center; }
+.brand-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
-.nav-name { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: 0.1em; }
+.brand-logo--nav { height: 2.15rem; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { font-size: 0.82rem; font-weight: 500; color: rgba(240,240,255,0.55); transition: color 0.25s; }
 .nav-links a:hover { color: var(--white); }
@@ -788,7 +788,11 @@ ul { list-style: none; }
   align-items: center; flex-wrap: wrap; gap: 1rem;
   color: var(--white);
 }
-.footer-brand { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.08em; }
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+}
+.brand-logo--footer { height: 2.5rem; }
 .footer-tag { color: rgba(240,240,255,0.4); font-size: 0.82rem; }
 .footer-copy { color: rgba(240,240,255,0.3); font-size: 0.78rem; font-family: var(--font-mono); }
 
@@ -822,6 +826,8 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
+  .brand-logo--nav { height: 1.9rem; }
+  .brand-logo--footer { height: 2.15rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
@@ -858,7 +864,13 @@ ul { list-style: none; }
 <!-- NAV -->
 <nav class="site-nav" id="site-nav">
   <div class="wrap">
-    <a href="#top" class="nav-brand"><span class="nav-mark">S</span><span class="nav-name">Starling Marketing</span></a>
+    <a href="#top" class="nav-brand" aria-label="Starling Marketing home">
+      <img
+        src="assets/starling-logo-horizontal-white-trimmed.png"
+        alt="Starling Marketing"
+        class="brand-logo brand-logo--nav"
+      >
+    </a>
     <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
     <div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
@@ -962,7 +974,7 @@ ul { list-style: none; }
       <div>
         <p class="eyebrow" style="color: rgba(255,255,255,0.5); margin-bottom: 1rem;">Primary Retainer</p>
         <h3>Lead Growth Retainer</h3>
-        <p class="svc-price">Starting at $1,950/mo</p>
+        <p class="svc-price">$1,950/mo</p>
         <p class="svc-desc">A focused lead-generation retainer for businesses with one primary lead goal and a simpler path from click to inquiry.</p>
         <p class="svc-fit">Best for: established service businesses or organizations with one main offer, one market, and a clear need for stronger lead flow.</p>
       </div>
@@ -987,7 +999,7 @@ ul { list-style: none; }
       <div class="svc-item">
         <p class="eyebrow">One-Time Engagement</p>
         <h3>Audit + Action Plan</h3>
-        <p class="svc-price">Starting at $1,500</p>
+        <p class="svc-price">$750</p>
         <p>A focused review for teams that need clarity before committing to ongoing support.</p>
         <ul>
           <li>Discovery session and current-state review</li>
@@ -1014,7 +1026,7 @@ ul { list-style: none; }
       <div class="svc-item">
         <p class="eyebrow">Project or Add-On</p>
         <h3>Event + Print Campaign Support</h3>
-        <p class="svc-price">Starting at $1,500</p>
+        <p class="svc-price">Starting at $500</p>
         <p>Strategic design to support trade shows, conferences, fundraisers, recruiting events, and in-person visibility campaigns.</p>
         <ul>
           <li>Campaign concept and message alignment</li>
@@ -1073,19 +1085,19 @@ ul { list-style: none; }
       <div class="ai-card">
         <p class="eyebrow">Discovery</p>
         <h3>AI Workflow Audit</h3>
-        <p class="svc-price" style="color: var(--teal);">Starting at $1,250</p>
+        <p class="svc-price" style="color: var(--teal);">Coming Soon</p>
         <p>A structured review of recurring tasks, reporting bottlenecks, lead handling, and admin workflows to identify high-value, low-risk opportunities.</p>
       </div>
       <div class="ai-card">
         <p class="eyebrow">Implementation</p>
         <h3>AI Pilot Setup</h3>
-        <p class="svc-price" style="color: var(--teal);">Starting at $2,000</p>
+        <p class="svc-price" style="color: var(--teal);">Coming Soon</p>
         <p>One focused buildout — inquiry triage, a reporting assistant, proposal drafting support, or a lead follow-up workflow with approval gates.</p>
       </div>
       <div class="ai-card">
         <p class="eyebrow">Maintenance</p>
         <h3>Managed AI Support</h3>
-        <p class="svc-price" style="color: var(--teal);">Starting at $300/mo</p>
+        <p class="svc-price" style="color: var(--teal);">Coming Soon</p>
         <p>Lower-cost ongoing support for prompt tuning, issue review, workflow adjustments, and light performance monitoring after setup.</p>
       </div>
     </div>
@@ -1209,8 +1221,8 @@ ul { list-style: none; }
       <h2>If demand already exists, your marketing should capture it.</h2>
       <p>Whether you need a focused lead-generation retainer, a campaign audit, event support, or a practical AI workflow pilot, Starling Marketing is built to help established teams move with more clarity and less waste.</p>
       <div class="cta-actions">
-        <a class="btn btn--white" href="mailto:SavannaRVigil@gmail.com?subject=Starling%20Marketing%20Inquiry">Start a Conversation</a>
-        <a class="btn btn--outline-light" href="mailto:SavannaRVigil@gmail.com?subject=Audit%20%2B%20Action%20Plan%20Inquiry">Ask About an Audit</a>
+        <a class="btn btn--white" href="mailto:admin@starlingmarketing.com?subject=Starling%20Marketing%20Inquiry">Start a Conversation</a>
+        <a class="btn btn--outline-light" href="mailto:admin@starlingmarketing.com?subject=Audit%20%2B%20Action%20Plan%20Inquiry">Ask About an Audit</a>
       </div>
     </div>
   </div>
@@ -1220,7 +1232,13 @@ ul { list-style: none; }
 <footer class="site-footer">
   <div class="wrap">
     <div style="display:flex;align-items:center;gap:2rem;">
-      <span class="footer-brand">Starling Marketing</span>
+      <span class="footer-brand">
+        <img
+          src="assets/starling-logo-horizontal-white-trimmed.png"
+          alt="Starling Marketing"
+          class="brand-logo brand-logo--footer"
+        >
+      </span>
       <span class="footer-tag">Lead generation, campaign support, and practical AI workflows.</span>
     </div>
     <span class="footer-copy">&copy; <span id="yr"></span> Starling Marketing. All rights reserved.</span>

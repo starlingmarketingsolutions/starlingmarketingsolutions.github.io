@@ -11,9 +11,7 @@
 
 <style>
 /* ═══════════════════════════════════════════════════
-   STARLING V3 — GEOMETRIC / ART-DIRECTED
-   Diagonal cuts, oversized type, CSS shapes,
-   asymmetric layouts, bold brand-color sections
+   STARLING MARKETING SOLUTIONS, LLC
    ═══════════════════════════════════════════════════ */
 
 :root {
@@ -823,6 +821,12 @@ ul { list-style: none; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .stat-cell:nth-child(2)::after { display: none; }
   .stat-cell { padding: 1rem; }
+  .cta-content {
+    text-align: left;
+    margin: 0;
+    max-width: none;
+  }
+  .cta-actions { justify-content: flex-start; }
 }
 
 @media (max-width: 768px) {
@@ -920,6 +924,14 @@ ul { list-style: none; }
     line-height: 0.92;
     max-width: 8ch;
   }
+  .svc-intro h2, .ret-text h2, .ai-intro h2,
+  .fit-intro h2, .proc-intro h2, .faq-intro h2,
+  .cta-content h2 {
+    max-width: 13ch;
+  }
+  .pos-headline {
+    max-width: 14ch;
+  }
   .svc-intro, .ai-intro, .fit-intro, .proc-intro, .faq-intro {
     margin-bottom: 3rem;
   }
@@ -987,6 +999,14 @@ ul { list-style: none; }
   .faq-intro h2, .cta-content h2 {
     font-size: clamp(2.1rem, 12vw, 3rem);
     max-width: 9ch;
+  }
+  .svc-intro h2, .ret-text h2, .ai-intro h2,
+  .fit-intro h2, .proc-intro h2, .faq-intro h2,
+  .cta-content h2 {
+    max-width: 12ch;
+  }
+  .pos-headline {
+    max-width: 13ch;
   }
   .hero-actions, .cta-actions { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
